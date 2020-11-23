@@ -1,0 +1,53 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+#form{
+    margin: auto;
+    padding: 4em;
+    background-color: #111e23;
+}
+.login-logo{
+    text-align: center;
+    padding-bottom: 4em;
+}
+#form h2{
+    text-align: center;
+    font-size: 2rem;
+    color: #f3f3f3;
+}
+.social-login{
+    display: flex;
+    
+}
+.social-login-wrap{
+    margin: auto;
+}
+.social-login img{
+    max-width: 50px;
+    
+}
+.btn-connect-option{
+    font-size: 1.2rem;
+    width: 100%;
+    padding: .5em 0;
+    color: #f3f3f3;
+    border: none;
+    display: inline-block;
+}
+.facebook{
+    background: #4367b0 url(../img/social.png) 0 -10px/60px 120px no-repeat;
+    margin: 0 20px 1em 0;
+}
+.google{
+    background: #4585f1 url(../img/social.png) 0 -70px/60px 120px no-repeat;
+}
+.signup-btn{
+    background-color: #f3f3f3;
+    color: #111e23;
+}

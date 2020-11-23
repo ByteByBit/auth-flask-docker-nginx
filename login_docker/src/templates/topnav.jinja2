@@ -1,0 +1,29 @@
+{% set navigation_bar = [
+    (url_for('main_bp.main'), 'Home'),
+    (url_for('main_bp.profile'), 'Profile'),
+    (url_for('main_bp.logout'), 'Log out')
+] -%}
+{% macro topnav() %}
+<link href="{{ url_for('static', filename='dist/css/topnav.css') }}" rel="stylesheet" type="text/css">
+    <div class="topnav-container">
+        <div class="topnav">
+            <div class="topnav-item">
+                <img class="topnav-logo" src="{{ url_for('static', filename='dist/img/logo.png') }}" alt="logo"/>
+            </div>        
+            <div class="topnav-item" id="topnav-menu-dropdown">
+                <img class="topnav-profile-img" src="{{ url_for('static', filename='dist/img/logo.png') }}" alt="logo"/>
+                <p class="topnav-name">{{ current_user.name }}</p>
+            </div>
+        </div>
+        <div id="topnav-menu">
+            <ul>
+            {% for href, caption in navigation_bar %}
+                <li>
+                    <a href="{{ href|e }}">{{ caption|e }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='dist/js/topnav.min.js') }}"></script>
+{% endmacro %}

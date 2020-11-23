@@ -1,0 +1,12 @@
+{% extends "layout.jinja2" %}
+
+{% block pagestyles %}
+  <link href="{{ url_for('static', filename='dist/css/main.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+  {% if current_user.is_authenticated %}
+    <h1>Main page</h1>
+    <p>Welcome, {{ current_user.name }}! </p>
+  {% endif %}
+
+{% endblock %}

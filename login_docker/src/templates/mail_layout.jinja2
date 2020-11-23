@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #form{
+        background-color: #111e23;
+        display: flex;
+      }
+      #form div{
+        text-align: center;
+      }
+      #form h1, #form span, #form a{
+        color: #f3f3f3;
+      }
+      .form-wrap{
+        margin: 3em auto;
+        padding: 10em 0;
+        border: 2px solid #f3f3f3;
+      }
+      .login-logo img{
+        text-align: center;
+      }    
+      .mail-body{
+        padding: 0 3em;
+      } 
+      .email-uri{
+        margin-top: 3em;
+      }
+      .email-uri a{
+        font-weight: bolder;
+        font-size:1.4em;
+        margin-top: 3em;
+        padding: 1em 3em;
+        background-color: #38535d;
+        text-decoration: none;
+      } 
+    </style>
+  </head>
+  <body>
+    <div id="form">
+        <div class="form-wrap">
+            <div class="login-logo">
+                <img src="cid:logo">
+            </div>
+            <div class="mail-body">
+                <div class="email-title">
+                    <h1>Confirm your account!</h1>
+                </div>
+                <div class="email-txt">
+                    <span>Click the link below to {{ text }}!</span>
+                </div>
+                <div class="email-uri">
+                    <a class="reset-link" href="{{ uri }}">
+                    {{ action_text }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

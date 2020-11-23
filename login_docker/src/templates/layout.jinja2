@@ -1,0 +1,22 @@
+{% from "topnav.jinja2" import topnav with context %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }}</title>
+  <meta property="og:image:width" content="1000"/>
+  <meta property="og:image:height" content="523"/>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,500" rel="stylesheet"/>
+  <script src="{{ url_for('static', filename='dist/js/jquery-3.3.1.min.js') }}"></script>
+  {% block pagestyles %}{% endblock %}
+</head>
+<body class="{{ template }}">
+<div class="container">
+  {% if current_user.is_authenticated %}
+    {{topnav()}}   
+    <div class="top-padding"></div> 
+  {% endif %}
+  {% block content %}{% endblock %}
+</div>
+{% block additionalscripts %}{% endblock %}
+</body>
+</html>

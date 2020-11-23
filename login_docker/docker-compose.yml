@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  auth:
+    build:
+      context: ./
+      dockerfile: ./src/Dockerfile
+    command: gunicorn --bind 0.0.0.0:5000 server:app 
+    expose:
+      - 5000
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.prod.db
+  nginx_auth:
+    build: ./nginx_auth
+    ports:
+      - 1338:80
+    depends_on:
+      - auth
+
+volumes:
+  postgres_data:
